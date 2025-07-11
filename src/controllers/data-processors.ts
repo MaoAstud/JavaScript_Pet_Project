@@ -1,6 +1,4 @@
-// Pure functions for data processing
-
-import type { Repository } from "../types/repository"
+import type { Repository, LanguageColor, LanguageColorMap } from "../types/repository"
 
 /**
  * Filters repositories that have more than the specified number of stars
@@ -87,4 +85,24 @@ export const sanitizeRepositories = (repositories: any[]): Repository[] => {
   }
 
   return repositories.filter(isValidRepository)
+}
+
+/**
+ * Gets a color for a programming language
+ */
+export const getLanguageColor = (language: string | null): LanguageColor => {
+  const colors: LanguageColorMap = {
+    JavaScript: "#f1e05a",
+    TypeScript: "#2b7489",
+    Python: "#3572A5",
+    Java: "#b07219",
+    Rust: "#dea584",
+    HTML: "#e34c26",
+    CSS: "#563d7c",
+    Go: "#00ADD8",
+    Ruby: "#701516",
+    PHP: "#4F5D95",
+  } as const
+
+  return colors[language || ""] || "#586069"
 }

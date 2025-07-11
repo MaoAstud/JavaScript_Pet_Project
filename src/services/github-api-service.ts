@@ -1,5 +1,3 @@
-// GitHub API service implementing IGitHubDataSource
-
 import type { IGitHubDataSource } from "../interfaces/github-data-source"
 import type { Repository } from "../types/repository"
 import { sanitizeRepositories } from "../controllers/data-processors"

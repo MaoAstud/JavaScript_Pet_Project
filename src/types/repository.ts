@@ -19,3 +19,8 @@ export interface GitHubApiError {
   readonly type: "network" | "api" | "validation" | "unknown"
 }
 
+export type LanguageColor = string
+
+export interface LanguageColorMap {
+  readonly [language: string]: LanguageColor
+}
